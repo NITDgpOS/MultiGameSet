@@ -11,7 +11,7 @@ public class Main extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(new MyTabPane(), BorderLayout.CENTER);
         this.pack();
-        this.setSize(new Dimension(650, 400));
+        this.setSize(new Dimension(750, 400));
         this.setVisible(true);
     }
 }

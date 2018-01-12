@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+
+import TicTacToe.TicTacToe;
 
 public class MyTabPane extends JPanel {
     public MyTabPane() {
@@ -11,12 +14,14 @@ public class MyTabPane extends JPanel {
         pane.add("Ludo", makeTextPanel("Ludo"));
         pane.add("Snake and Ladder", makeTextPanel("Snake and Ladder"));
         pane.add("Checkers", makeTextPanel("Checkers"));
-        pane.add("Tic Tac Toe", makeTextPanel("Tic Tac Toe"));
-
-        add(pane);
+        pane.add("Tic Tac Toe", new TicTacToe());
 
         pane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         pane.setTabPlacement(JTabbedPane.LEFT);
+
+        for (int i = 0; i < 6; i++) pane.setMnemonicAt(0, KeyEvent.VK_1 + i);
+
+        add(pane);
     }
 
     protected JComponent makeTextPanel(String text) {
